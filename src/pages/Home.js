@@ -1,6 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import bg from "../assets/hogwarts.png";
 import "../App.css";
+import bgBooks from "../assets/books.png";
+import bgCharacters from "../assets/characters.png";
+import bgHouses from "../assets/houses.png";
+import bgSpells from "../assets/spells.png";
+
+useEffect(() => {
+  [bgBooks, bgCharacters, bgHouses, bgSpells].forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+}, []);
 
 function Home() {
   const navigate = useNavigate();
