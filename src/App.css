@@ -1,38 +1,343 @@
-.App {
+/* ================= HOME ================= */
+.home {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+
+.overlay {
+  height: 100%;
+  background: rgba(52, 50, 50, 0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 60px;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 20px rgba(255,255,255,0.8);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.subtitle {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+/* ================= HOME BUTTON ================= */
+.btn-group-home {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-group-home button {
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-family: 'Cinzel Decorative', serif;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-group-home button:hover {
+  background: rgba(255,255,255,0.3);
+  transform: translateY(-5px);
+}
+
+/* ================= ANIMATION ================= */
+.fade-in {
+  animation: fade 1.5s ease-in-out;
+}
+
+@keyframes fade {
+  from {
+    opacity:0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity:1;
+    transform: translateY(0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
+/* ================= PAGE BACKGROUND ================= */
+.page-bg,
+.books-page,
+.detail-page {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page-overlay,
+.books-overlay,
+.detail-overlay {
+  min-height: 100vh;
+  backdrop-filter: blur(2px);
+  background: rgba(0,0,0,0.65);
+  padding: 40px 0;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* ================= TITLE ================= */
+.page-title {
+  text-align: center;
+  color: white;
+  font-size: 45px;
+  margin-bottom: 40px;
+  font-family: 'Cinzel Decorative', serif;
+  text-shadow: 0 0 15px rgba(255,255,255,0.8);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ================= GLASS CARD ================= */
+.glass-card {
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(226, 212, 232, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  color: rgb(222, 214, 157);
+  transition: 0.3s;
+  padding: 20px;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+}
+
+/* GLASS WARNA HALAMAN */
+.glass-character {
+  background: rgba(124, 208, 232, 0.12);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.glass-spell {
+  background: rgba(255,215,0,0.08);
+  border: 1px solid rgba(255,215,0,0.4);
+}
+
+.glass-book {
+  background: rgba(235, 117, 117, 0.1);
+  border: 1px solid rgba(120,180,255,0.4);
+}
+
+/* ================= MAGIC BUTTON ================= */
+.magic-btn {
+  background: rgba(255,255,255,0.18) !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  backdrop-filter: blur(6px);
+  color: white !important;
+}
+
+.magic-btn:hover {
+  background: rgba(255,255,255,0.35) !important;
+  color: black !important;
+}
+
+/* ================= BACK BUTTON ================= */
+.back-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: rgba(255,255,255,0.18) !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  backdrop-filter: blur(6px);
+  color: white !important;
+  z-index: 999;
+  border-radius: 30px !important;
+  padding: 8px 18px !important;
+}
+
+.back-btn:hover {
+  background: rgba(255,255,255,0.35) !important;
+}
+
+/* ================= DETAIL ================= */
+.detail-image {
+  width: 220px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+.detail-title {
+  font-family: 'Cinzel', serif;
+  margin-bottom: 20px;
+}
+
+.detail-text {
+  text-align: left;
+  font-size: 15px;
+}
+
+/* ================= CHARACTER ================= */
+.character-card {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 20px;
+  width: 500px;
+  min-height: 160px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 8px rgba(220, 24, 24, 0.15);
+}
+
+.character-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 0 10px rgba(255,255,255,0.25),
+    0 0 20px rgba(255,255,255,0.15);
+}
+
+.character-img {
+  width: 110px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.character-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  flex: 1;
+}
+
+.character-body .magic-btn {
+  width: 140px;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.character-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+/* ================= HOUSES ================= */
+.house-card {
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.house-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px);
+  transform: scale(1.1);
+}
+
+.house-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.house-card .card-body {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.house-title {
+  font-size: 26px;
+  font-family: 'Cinzel Decorative', serif;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.house-card:hover {
+  transform: translateY(-6px);
+  transition: 0.3s ease;
+}
+
+/* WARNA HOUSE */
+.gryffindor {
+  border: 1px solid rgba(255, 80, 80, 0.6);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.25);
+}
+
+.slytherin {
+  border: 1px solid rgba(80, 255, 120, 0.6);
+  box-shadow: 0 0 15px rgba(0, 255, 120, 0.25);
+}
+
+.ravenclaw {
+  border: 1px solid rgba(80, 160, 255, 0.6);
+  box-shadow: 0 0 15px rgba(0, 120, 255, 0.25);
+}
+
+.hufflepuff {
+  border: 1px solid rgba(255, 220, 80, 0.7);
+  box-shadow: 0 0 15px rgba(255, 200, 0, 0.25);
+}
+
+/* ================= SPELL ================= */
+.spell-card {
+  height: 140px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  border: 1px solid rgba(255, 215, 0, 0.5);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.25);
+  transition: 0.3s ease;
+}
+
+.spell-card .card-body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+/* ================= BOOK ================= */
+.book-card {
+  transition: 0.3s ease;
+  border: 1px solid rgba(120,180,255,0.3);
+  box-shadow: 0 0 10px rgba(120,180,255,0.15);
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 0 10px rgba(120,180,255,0.4),
+    0 0 25px rgba(120,180,255,0.3);
 }
