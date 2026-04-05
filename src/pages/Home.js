@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import bg from "../assets/hogwarts.png";
 import "../App.css";
@@ -6,15 +7,15 @@ import bgCharacters from "../assets/characters.png";
 import bgHouses from "../assets/houses.png";
 import bgSpells from "../assets/spells.png";
 
-useEffect(() => {
-  [bgBooks, bgCharacters, bgHouses, bgSpells].forEach(src => {
-    const img = new Image();
-    img.src = src;
-  });
-}, []);
-
 function Home() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    [bgBooks, bgCharacters, bgHouses, bgSpells].forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   return (
     <div className="home" style={{ backgroundImage: `url(${bg})` }}>
@@ -24,19 +25,19 @@ function Home() {
 
         <div className="btn-group-home">
           <button onClick={() => navigate("/books")}>
-            <i className="bi bi-book"></i> Books
+            Books
           </button>
 
           <button onClick={() => navigate("/characters")}>
-            <i className="bi bi-people"></i> Characters
+            Characters
           </button>
 
           <button onClick={() => navigate("/houses")}>
-            <i className="bi bi-house"></i> Houses
+            Houses
           </button>
 
           <button onClick={() => navigate("/spells")}>
-            <i className="bi bi-stars"></i> Spells
+            Spells
           </button>
         </div>
       </div>
